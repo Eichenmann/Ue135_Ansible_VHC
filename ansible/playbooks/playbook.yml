@@ -10,3 +10,10 @@
   become: yes
   roles:
     - nodejs_app
+
+- name: debug facts
+  hosts: loadbalancer
+  tasks: 
+  - name: Print all gathered facts
+    debug:
+      var: ansible_facts  
